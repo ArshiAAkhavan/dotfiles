@@ -112,20 +112,20 @@ scrolling:
 # Font configuration
 font:
   normal:
-    # family: "MesloLGS NF"
-    family: "MesloLGS Nerd Font"
+    # family: "MesloLGS Nerd Font"
+    family: "ComicShannsMono Nerd Font propo"
     style: Regular
   bold:
-    # family: "MesloLGS NF"
-    family: "MesloLGS Nerd Font"
+    # family: "MesloLGS Nerd Font"
+    family: "ComicShannsMono Nerd Font propo"
     style: Bold
   italic:
-    # family: "MesloLGS NF"
-    family: "MesloLGS Nerd Font"
+    # family: "MesloLGS Nerd Font"
+    family: "ComicShannsMono Nerd Font propo"
     style: Italic
   bold_italic:
-    # family: "MesloLGS NF"
-    family: "MesloLGS Nerd Font"
+    # family: "MesloLGS Nerd Font"
+    family: "ComicShannsMono Nerd Font propo"
     style: Bold Italic
 
   # Point size
