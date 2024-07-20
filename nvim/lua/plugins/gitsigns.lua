@@ -44,7 +44,7 @@ local M = {
         map("n", "<leader>hb", function()
           gitsigns.blame_line { full = true }
         end, { desc = " git blame" })
-        map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "   toggle git blame" })
+        map("n", "<leader>gb", gitsigns.toggle_current_line_blame, { desc = "   toggle git blame on line" })
         map("n", "<leader>hd", gitsigns.diffthis, { desc = " git diff" })
         map("n", "<leader>hD", function()
           gitsigns.diffthis "~"
