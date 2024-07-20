@@ -9,7 +9,8 @@ local M = {
     "nvim-neotest/neotest-go",
   },
   config = function()
-    require("neotest").setup {
+    local neotest = require "neotest"
+    neotest.setup {
       adapters = {
         require "neotest-go",
       },
