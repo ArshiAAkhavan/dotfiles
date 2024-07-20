@@ -12,7 +12,7 @@ local M = {
     telescope.load_extension "cmdline"
   end,
   mapping = function()
-    vim.api.nvim_set_keymap("n", ":", ":Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
+    -- vim.api.nvim_set_keymap("n", ":", ":Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
     vim.api.nvim_set_keymap("n", ";", ":Telescope cmdline<CR>", { noremap = true, desc = "Cmdline" })
   end,
 }
