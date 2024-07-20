@@ -15,6 +15,7 @@ local M = {
       "bash-language-server",
       -- -- rust
       -- "rust_analyzer",
+      "codelldb",
       -- go
       "gopls",
     },

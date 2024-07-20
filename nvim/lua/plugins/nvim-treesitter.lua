@@ -7,7 +7,7 @@ local M = {
       "vimdoc",
       "html",
       "css",
-      -- "rust",
+      "rust",
       "go",
       "yaml",
       "json",
