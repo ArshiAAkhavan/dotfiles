@@ -22,10 +22,27 @@ local M = {
       show_stop_reason = true,
     }
 
+    -- attach dapui to dap
     dap.listeners.before.attach.dapui_config = dapui.open
     dap.listeners.before.launch.dapui_config = dapui.open
     dap.listeners.before.event_terminated.dapui_config = dapui.close
     dap.listeners.before.event_exited.dapui_config = dapui.close
+
+    -- signs
+    vim.fn.sign_define(
+      "DapBreakpoint",
+      { text = " ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoin" }
+    )
+    vim.fn.sign_define(
+      "DapBreakpointRejected",
+      { text = " ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoin" }
+    )
+    vim.fn.sign_define(
+      "DapBreakpointCondition",
+      { text = " ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoin" }
+    )
+
+    -- keymaps
     vim.keymap.set("n", "<F5>", dap.continue, { desc = "  dap continue" })
     vim.keymap.set("n", "<F11>", dap.step_into, { desc = "  dap step into" })
     vim.keymap.set("n", "<F10>", dap.step_over, { desc = "  dap step over" })
@@ -34,12 +51,14 @@ local M = {
     vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "  dap step into" })
     vim.keymap.set("n", "<leader>dj", dap.step_over, { desc = "  dap step over" })
     vim.keymap.set("n", "<leader>dk", dap.step_out, { desc = " 󰆸 dap step out" })
-    vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, { desc = "  toggle breakpoint" })
     vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, { desc = "  toggle breakpoint" })
     vim.keymap.set("n", "<Leader>lp", function()
       dap.set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
     end)
-    vim.keymap.set("n", "<Leader>dr", dap.repl.open)
+    vim.keymap.set("n", "<Leader>dr", function()
+      dapui.open { reset = true }
+    end, { desc = "  dapui reset" })
+    vim.keymap.set("n", "<Leader>dt", dapui.toggle, { desc = "  dapui toggle" })
     vim.keymap.set("n", "<Leader>dl", dap.run_last)
     vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
       require("dap.ui.widgets").hover()
