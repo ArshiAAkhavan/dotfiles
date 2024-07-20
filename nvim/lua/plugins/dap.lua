@@ -1,6 +1,5 @@
 local M = {
   "mfussenegger/nvim-dap",
-  event = "BufWritePre", -- uncomment for format on save
   dependencies = {
     "nvim-neotest/nvim-nio",
     "rcarriga/nvim-dap-ui",
@@ -45,7 +44,10 @@ local M = {
       "DapBreakpointCondition",
       { text = " ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
     )
-
+  end,
+  mapping = function()
+    local dap = require "dap"
+    local dapui = require "dapui"
     -- keymaps
     vim.keymap.set("n", "<F5>", dap.continue, { desc = "  dap continue" })
     vim.keymap.set("n", "<F11>", dap.step_into, { desc = "  dap step into" })

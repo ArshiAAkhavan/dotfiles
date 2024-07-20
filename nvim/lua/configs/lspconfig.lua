@@ -15,7 +15,7 @@ local servers = {
   "jsonls",
   "bashls",
   -- rust
-  "rust_analyzer",
+  -- "rust_analyzer",
   -- go
   "gopls",
 }
@@ -28,3 +28,18 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      inlayHints = {
+        bindingModeHints = {
+          enable = true,
+        },
+      },
+    },
+  },
+}
