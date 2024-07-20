@@ -6,4 +6,5 @@ return {
   require "plugins.nvim-treesitter",
   require "plugins.conform",
   require "plugins.lspconfig",
+  require "plugins.telescope",
 }
