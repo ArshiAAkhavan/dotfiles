@@ -15,10 +15,12 @@ local servers = {
   "jsonls",
   "bashls",
   -- rust
-  -- "rust_analyzer",
+  "rust_analyzer",
   -- go
   "gopls",
 }
+
+vim.lsp.inlay_hint.enable(true)
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -29,17 +31,17 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      inlayHints = {
-        bindingModeHints = {
-          enable = true,
-        },
-      },
-    },
-  },
-}
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--   settings = {
+--     ["rust-analyzer"] = {
+--       inlayHints = {
+--         bindingModeHints = {
+--           enable = true,
+--         },
+--       },
+--     },
+--   },
+-- }
