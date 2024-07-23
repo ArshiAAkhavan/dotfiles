@@ -2,19 +2,28 @@ local M = {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
+      -- vim/nvim
       "vim",
       "lua",
       "vimdoc",
+      -- web
       "html",
       "css",
+      -- rust
       "rust",
+      -- go
       "go",
+      "gomod",
+      "gosum",
+      -- config languages
       "yaml",
       "json",
       "toml",
+      -- C
       "make",
       "c",
       "cpp",
+      -- terminal
       "bash",
     },
   },

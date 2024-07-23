@@ -5,7 +5,7 @@ local M = {
     require "configs.lspconfig"
   end,
   mapping = function()
-    vim.keymap.set({ "n", "v" }, "<leader>ga", vim.lsp.buf.code_action, { desc = "Code action" })
+    vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, { desc = "Code action" })
   end,
 }
 return M
