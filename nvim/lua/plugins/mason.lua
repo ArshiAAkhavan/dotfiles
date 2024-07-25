@@ -9,10 +9,11 @@ local M = {
       -- web
       "html-lsp",
       "css-lsp",
-      -- terminal
+      -- config & script languages
       "yaml-language-server",
       "json-lsp",
       "bash-language-server",
+      -- "autotools-language-server",
       -- -- rust
       -- "rust_analyzer",
       "codelldb",
