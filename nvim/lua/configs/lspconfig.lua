@@ -10,9 +10,10 @@ local servers = {
   -- web
   "html",
   "cssls",
-  -- terminal
+  -- config & scripts
   "yamlls",
   "jsonls",
+  -- "autotools_ls",
   "bashls",
   -- rust
   "rust_analyzer",
