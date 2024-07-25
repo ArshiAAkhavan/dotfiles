@@ -82,6 +82,7 @@ local M = {
   mapping = function()
     local dap = require "dap"
     local dapui = require "dapui"
+    local dapvir = require "nvim-dap-virtual-text"
     -- keymaps
     vim.keymap.set("n", "<F5>", dap.continue, { desc = "  dap continue" })
     vim.keymap.set("n", "<F11>", dap.step_into, { desc = "  dap step into" })
@@ -99,6 +100,7 @@ local M = {
       dapui.open { reset = true }
     end, { desc = "  dapui reset" })
     vim.keymap.set("n", "<Leader>dt", dapui.toggle, { desc = "  dapui toggle" })
+    vim.keymap.set("n", "<Leader>dv", dapvir.toggle, { desc = "  toggle virtual text" })
     vim.keymap.set("n", "<Leader>dl", dap.run_last)
     vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
       require("dap.ui.widgets").hover()
