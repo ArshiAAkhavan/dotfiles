@@ -8,4 +8,5 @@ return {
   require "plugins.lspconfig",
   require "plugins.telescope",
   require "plugins.markdown",
+  require "plugins.cmp",
 }
