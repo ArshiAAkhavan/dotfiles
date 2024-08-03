@@ -3,15 +3,18 @@ local M = {
   dependencies = {
     "nvim-neotest/nvim-nio",
     "rcarriga/nvim-dap-ui",
-    "leoluz/nvim-dap-go",
     "theHamsta/nvim-dap-virtual-text",
     "nvim-telescope/telescope-dap.nvim",
+    -- language supports
+    "leoluz/nvim-dap-go",
+    "mfussenegger/nvim-dap-python",
   },
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"
 
     require("dap-go").setup()
+    require("dap-python").setup "python"
     require("dapui").setup()
     require("telescope").load_extension "dap"
     require("nvim-dap-virtual-text").setup {

@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     go = { "golines", { "gofumpt", "gofmt" }, "goimports" },
     rust = { "rustfmt" },
+    python = { { "ruff_format", "black" }, "ruff_fix", { "ruff_organize_imports", "reorder-python-imports" } },
     ["_"] = { "trim_whitespace" },
     -- css = { "prettier" },
     -- html = { "prettier" },

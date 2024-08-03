@@ -19,6 +19,10 @@ local servers = {
   "rust_analyzer",
   -- go
   "gopls",
+  -- python
+  "jedi_language_server",
+  "pyright",
+  "ruff",
 }
 
 vim.lsp.inlay_hint.enable(true)

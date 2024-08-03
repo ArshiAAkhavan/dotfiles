@@ -19,6 +19,13 @@ local M = {
       "codelldb",
       -- go
       "gopls",
+      -- python
+      "black",
+      "jedi-language-server",
+      "pyright",
+      "ruff",
+      "reorder-python-imports",
+      "debugpy",
     },
   },
 }
