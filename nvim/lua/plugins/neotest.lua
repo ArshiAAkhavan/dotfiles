@@ -5,8 +5,10 @@ local M = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
+    -- language adapters
     "nvim-neotest/neotest-go",
     "rouge8/neotest-rust",
+    "nvim-neotest/neotest-python",
   },
   config = function()
     local neotest = require "neotest"
@@ -14,6 +16,7 @@ local M = {
       adapters = {
         require "neotest-go",
         require "neotest-rust",
+        require "neotest-python",
       },
     }
   end,
