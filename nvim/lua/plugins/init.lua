@@ -9,4 +9,5 @@ return {
   require "plugins.telescope",
   require "plugins.markdown",
   require "plugins.cmp",
+  require "plugins.nvim-tree-sitter-context",
 }
