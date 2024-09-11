@@ -151,8 +151,11 @@ function skip  {
 ###################################### VPN ##########################################
 alias 'v2ray::iman'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c iman.json)'
 alias 'v2ray::iman2'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c iman2.json)'
+alias 'v2ray::iman3'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c iman3.json)'
+alias 'v2ray::iman4'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c iman4.json)'
 alias 'v2ray::usa'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c usa.json)'
 
 
 ###################################### warp #########################################
 alias 'warp'='export HTTP_PROXY=http://127.0.0.1:10809 HTTPS_PROXY=http://127.0.0.1:10809 && warp-terminal'
+
