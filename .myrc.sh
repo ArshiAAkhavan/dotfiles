@@ -142,6 +142,10 @@ function skip  {
   tee | tail -n +$(($1 + 1))
 }
 
+function take {
+  tee | awk "{print \$$1}"
+}
+
 ###################################### completion ###################################
 # kubebuilder
 # . <(kubebuilder completion zsh)
