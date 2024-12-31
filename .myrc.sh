@@ -146,6 +146,10 @@ function take {
   tee | awk "{print \$$1}"
 }
 
+function add {
+ tee | awk '{sum += $1} END {print sum}'
+}
+
 ###################################### completion ###################################
 # kubebuilder
 # . <(kubebuilder completion zsh)

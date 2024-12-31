@@ -34,6 +34,15 @@ local M = {
     }
     dap.configurations.rust = {
       {
+        -- uncomment for running debbuger for main
+        -- request = "launch",
+        -- type = "codelldb",
+        -- program = function()
+        --   return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+        -- end,
+        -- cwd = "${workspaceFolder}",
+        -- stopOnEntry = false,
+        -- args = {},
         -- ... the previous config goes here ...,
         initCommands = function()
           -- Find out where to look for the pretty printer Python module
