@@ -1,7 +1,6 @@
 local M = {
   "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
+   pkgs = {
       "prettier",
       -- lua
       "lua-language-server",
@@ -27,6 +26,5 @@ local M = {
       "reorder-python-imports",
       "debugpy",
     },
-  },
 }
 return M

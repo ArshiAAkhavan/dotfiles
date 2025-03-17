@@ -34,16 +34,14 @@ local M = {
     }
     dap.configurations.rust = {
       {
-        -- uncomment for running debbuger for main
-        -- request = "launch",
-        -- type = "codelldb",
-        -- program = function()
-        --   return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-        -- end,
-        -- cwd = "${workspaceFolder}",
-        -- stopOnEntry = false,
-        -- args = {},
-        -- ... the previous config goes here ...,
+        request = "launch",
+        type = "codelldb",
+        program = function()
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
         initCommands = function()
           -- Find out where to look for the pretty printer Python module
           local rustc_sysroot = vim.fn.trim(vim.fn.system "rustc --print sysroot")
@@ -63,7 +61,6 @@ local M = {
 
           return commands
         end,
-        -- ...,
       },
     }
 
@@ -94,40 +91,37 @@ local M = {
   mapping = function()
     local dap = require "dap"
     local dapui = require "dapui"
+    local dap_ui_widgets = require "dap.ui.widgets"
     local dapvir = require "nvim-dap-virtual-text"
     -- keymaps
-    vim.keymap.set("n", "<F5>", dap.continue, { desc = "  dap continue" })
-    vim.keymap.set("n", "<F11>", dap.step_into, { desc = "  dap step into" })
-    vim.keymap.set("n", "<F10>", dap.step_over, { desc = "  dap step over" })
-    vim.keymap.set("n", "<F12>", dap.step_out, { desc = " 󰆸 dap step out" })
-    vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "  dap continue" })
-    vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "  dap step into" })
-    vim.keymap.set("n", "<leader>dj", dap.step_over, { desc = "  dap step over" })
-    vim.keymap.set("n", "<leader>dk", dap.step_out, { desc = " 󰆸 dap step out" })
-    vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, { desc = "  toggle breakpoint" })
-    vim.keymap.set("n", "<Leader>lp", function()
+    local map = vim.keymap.set
+    map("n", "<F5>", dap.continue, { desc = "  dap continue" })
+    map("n", "<F11>", dap.step_into, { desc = "  dap step into" })
+    map("n", "<F10>", dap.step_over, { desc = "  dap step over" })
+    map("n", "<F12>", dap.step_out, { desc = " 󰆸 dap step out" })
+    map("n", "<leader>dc", dap.continue, { desc = "  dap continue" })
+    map("n", "<leader>di", dap.step_into, { desc = "  dap step into" })
+    map("n", "<leader>dj", dap.step_over, { desc = "  dap step over" })
+    map("n", "<leader>dk", dap.step_out, { desc = " 󰆸 dap step out" })
+    map("n", "<Leader>db", dap.toggle_breakpoint, { desc = "  toggle breakpoint" })
+    map("n", "<Leader>lp", function()
       dap.set_breakpoint(nil, nil, vim.fn.input "Log point message: ")
     end)
-    vim.keymap.set("n", "<Leader>dr", function()
+    map("n", "<Leader>dr", function()
       dapui.open { reset = true }
-    end, { desc = "  dapui reset" })
-    vim.keymap.set("n", "<Leader>dt", dapui.toggle, { desc = "  dapui toggle" })
-    vim.keymap.set("n", "<Leader>dv", dapvir.toggle, { desc = "  toggle virtual text" })
-    vim.keymap.set("n", "<Leader>dl", dap.run_last)
-    vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
-      require("dap.ui.widgets").hover()
-    end)
-    vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
-      require("dap.ui.widgets").preview()
-    end)
-    vim.keymap.set("n", "<Leader>df", function()
-      local widgets = require "dap.ui.widgets"
-      widgets.centered_float(widgets.frames)
-    end)
-    vim.keymap.set("n", "<Leader>ds", function()
-      local widgets = require "dap.ui.widgets"
-      widgets.centered_float(widgets.scopes)
-    end)
+    end, { desc = " ⟳ dapui reset" })
+    map("n", "<Leader>dt", dapui.toggle, { desc = "  dapui toggle" })
+    map("n", "<Leader>dv", dapvir.toggle, { desc = "  toggle virtual text" })
+    map("n", "<Leader>dl", dap.run_last)
+
+    map({ "n", "v" }, "<Leader>dh",dap_ui_widgets.hover,{ desc = "  dapui hover" })
+    map({ "n", "v" }, "<Leader>dp",dap_ui_widgets.preview,{ desc = " 📹 dapui preview" })
+    map("n", "<Leader>df", function()
+      dap_ui_widgets.centered_float(dap_ui_widgets.frames)
+    end,{ desc = " 🎞️ dapui frames" })
+    map("n", "<Leader>ds", function()
+      dap_ui_widgets.centered_float(dap_ui_widgets.scopes)
+    end,{ desc = " 🥣 dapui scopes" })
   end,
 }
 

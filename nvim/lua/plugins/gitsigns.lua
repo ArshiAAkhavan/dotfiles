@@ -4,12 +4,7 @@ local M = {
     require("gitsigns").setup {
       on_attach = function(bufnr)
         local gitsigns = require "gitsigns"
-
-        local function map(mode, l, r, opts, desc)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts, desc)
-        end
+        local map = vim.keymap.set
 
         -- Navigation
         map("n", "]c", function()
@@ -52,7 +47,7 @@ local M = {
         map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "   toggle deleted" })
 
         -- Text object
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+        map({ "o", "x" }, "hi", ":<C-U>Gitsigns select_hunk<CR>")
       end,
     }
   end,
