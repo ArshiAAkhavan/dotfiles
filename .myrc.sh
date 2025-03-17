@@ -123,7 +123,7 @@ function hl(){
 }
 
 ###################################### sotoon #######################################
-source ~/.sotoon-rc.sh
+# source ~/.sotoon-rc.sh
 
 ###################################### yazi #########################################
 function ya() {
@@ -149,11 +149,6 @@ function take {
 function add {
  tee | awk '{sum += $1} END {print sum}'
 }
-
-###################################### completion ###################################
-# kubebuilder
-# . <(kubebuilder completion zsh)
-# . <(squashctl completion zsh)
 
 
 ###################################### VPN ##########################################
