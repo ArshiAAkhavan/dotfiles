@@ -2,6 +2,8 @@ return {
   require "plugins.neotest",
   require "plugins.dap",
   require "plugins.nvim-dap-projects",
+  require "plugins.crates",
+  require "plugins.rustacean",
   require "plugins.gitsigns",
   require "plugins.mason",
   require "plugins.nvim-treesitter",

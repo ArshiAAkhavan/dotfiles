@@ -9,14 +9,17 @@ local M = {
     "nvim-neotest/neotest-go",
     "rouge8/neotest-rust",
     "nvim-neotest/neotest-python",
+    -- "mrcjkb/rustaceanvim",
   },
   config = function()
     local neotest = require "neotest"
     neotest.setup {
       adapters = {
         require "neotest-go",
-        require "neotest-rust",
         require "neotest-python",
+        require "neotest-rust",
+        -- there was some errors when runnig, maybe there are no more? try again!
+        -- require "rustaceanvim.neotest",
       },
     }
   end,

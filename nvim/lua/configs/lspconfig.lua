@@ -17,8 +17,9 @@ local servers = {
   "jsonls",
   -- "autotools_ls",
   "bashls",
+  -- not rust config since it has been setup by rustacean.nvim
   -- rust
-  "rust_analyzer",
+  -- "rust_analyzer",
   -- go
   "gopls",
   -- python
