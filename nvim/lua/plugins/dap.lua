@@ -5,6 +5,7 @@ local M = {
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
     "nvim-telescope/telescope-dap.nvim",
+    "ldelossa/nvim-dap-projects",
     -- language adapters
     "leoluz/nvim-dap-go",
     "mfussenegger/nvim-dap-python",
@@ -13,8 +14,6 @@ local M = {
     local dap = require "dap"
     local dapui = require "dapui"
 
-    require("dap-go").setup()
-    require("dap-python").setup "python"
     require("dapui").setup()
     require("telescope").load_extension "dap"
     require("nvim-dap-virtual-text").setup {
@@ -23,6 +22,9 @@ local M = {
       all_references = false,
       show_stop_reason = true,
     }
+
+    require("dap-go").setup()
+    require("dap-python").setup "python"
     -- rust
     dap.adapters.codelldb = {
       type = "server",
@@ -93,13 +95,22 @@ local M = {
     local dapui = require "dapui"
     local dap_ui_widgets = require "dap.ui.widgets"
     local dapvir = require "nvim-dap-virtual-text"
+    local dapprojects = require "nvim-dap-projects"
     -- keymaps
     local map = vim.keymap.set
-    map("n", "<F5>", dap.continue, { desc = "  dap continue" })
+    map("n", "<F5>", function()
+      dapprojects.search_project_config()
+      dap.continue()
+    end, { desc = "  dap continue" })
     map("n", "<F11>", dap.step_into, { desc = "  dap step into" })
     map("n", "<F10>", dap.step_over, { desc = "  dap step over" })
     map("n", "<F12>", dap.step_out, { desc = " 󰆸 dap step out" })
-    map("n", "<leader>dc", dap.continue, { desc = "  dap continue" })
+    -- map("n", "<leader>dc", dap.continue, { desc = "  dap continue" })
+    map("n", "<leader>dc", function()
+      dapprojects.search_project_config()
+      dap.continue()
+    end, { desc = "  dap continue" })
+
     map("n", "<leader>di", dap.step_into, { desc = "  dap step into" })
     map("n", "<leader>dj", dap.step_over, { desc = "  dap step over" })
     map("n", "<leader>dk", dap.step_out, { desc = " 󰆸 dap step out" })
@@ -114,14 +125,14 @@ local M = {
     map("n", "<Leader>dv", dapvir.toggle, { desc = "  toggle virtual text" })
     map("n", "<Leader>dl", dap.run_last)
 
-    map({ "n", "v" }, "<Leader>dh",dap_ui_widgets.hover,{ desc = "  dapui hover" })
-    map({ "n", "v" }, "<Leader>dp",dap_ui_widgets.preview,{ desc = " 📹 dapui preview" })
+    map({ "n", "v" }, "<Leader>dh", dap_ui_widgets.hover, { desc = "  dapui hover" })
+    map({ "n", "v" }, "<Leader>dp", dap_ui_widgets.preview, { desc = " 📹 dapui preview" })
     map("n", "<Leader>df", function()
       dap_ui_widgets.centered_float(dap_ui_widgets.frames)
-    end,{ desc = " 🎞️ dapui frames" })
+    end, { desc = " 🎞️ dapui frames" })
     map("n", "<Leader>ds", function()
       dap_ui_widgets.centered_float(dap_ui_widgets.scopes)
-    end,{ desc = " 🥣 dapui scopes" })
+    end, { desc = " 🥣 dapui scopes" })
   end,
 }
 
