@@ -9,6 +9,8 @@ local M = {
       -- web
       "html",
       "css",
+      -- python 
+      "python",
       -- rust
       "rust",
       -- go
