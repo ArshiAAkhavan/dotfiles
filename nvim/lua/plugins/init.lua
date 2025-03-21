@@ -13,4 +13,5 @@ return {
   require "plugins.markdown",
   require "plugins.cmp",
   require "plugins.nvim-tree-sitter-context",
+  require "plugins.avante",
 }

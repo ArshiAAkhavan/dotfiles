@@ -162,5 +162,7 @@ alias 'v2ray::usa'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c usa.json)'
 ###################################### warp #########################################
 alias 'warp'='export HTTP_PROXY=http://127.0.0.1:10809 HTTPS_PROXY=http://127.0.0.1:10809 && warp-terminal'
 
-###################################### copilot ci ###################
-.<(gh copilot alias zsh)
+###################################### copilot cli ##################################
+. <(gh copilot alias zsh)
+
+source ~/.myenv.sh
