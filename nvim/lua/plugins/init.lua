@@ -14,4 +14,5 @@ return {
   require "plugins.cmp",
   require "plugins.nvim-tree-sitter-context",
   require "plugins.avante",
+  require "plugins.copilot",
 }
