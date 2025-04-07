@@ -25,9 +25,9 @@ local M = {
         hide_during_completion = true,
         debounce = 75,
         keymap = {
-          accept = "<M-l>",
+          accept = "<M-L>",
           accept_word = false,
-          accept_line = false,
+          accept_line = "<M-l>",
           next = "<M-]>",
           prev = "<M-[>",
           dismiss = "<C-]>",
@@ -63,6 +63,13 @@ local M = {
       server_opts_overrides = {},
     })
   end,
+  mapping = function ()
+    local map = vim.keymap.set
+    map("n", "<leader>ct", function()
+      vim.b.copilot_suggestion_hidden = not vim.b.copilot_suggestion_hidden
+      print("Copilot suggestion is now " .. (vim.b.copilot_suggestion_hidden and "hidden" or "visible"))
+    end, { desc = "   toggle copilot" })
+  end
 }
 
 return M
