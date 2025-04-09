@@ -58,17 +58,18 @@ function docker_pull_mirror {
   docker tag $IMAGE_MIRROR $1
 }
 
-function docker(){
-  if [[ "$1" == "pull" ]];then
-    shift 1
-    docker_pull_with_retry $1
-  elif [[ "$1" == "get" ]];then
-    shift 1
-    docker_pull_mirror $1
-  else
-    command docker "$@"
-  fi
-}
+# goodbye filtershekan goodbyeeeeeeee
+# function docker(){
+#   if [[ "$1" == "pull" ]];then
+#     shift 1
+#     docker_pull_with_retry $1
+#   elif [[ "$1" == "get" ]];then
+#     shift 1
+#     docker_pull_mirror $1
+#   else
+#     command docker "$@"
+#   fi
+# }
 ##################################### ssh ############################################
 function kill_all_ssh_sessions {
   kill `ps -aux | grep 'ssh ' | grep $(whoami) | awk '{print$2}'` -9
@@ -99,6 +100,7 @@ alias json='batcat -l json'
 
 autoload -U compinit && compinit -u
 # ##################################### zoxide #######################################
+eval "$(zoxide init zsh)"
 # source ~/.zoxide.sh
 
 ###################################### editor ########################################
