@@ -36,40 +36,6 @@ alias cat="batcat"
 ######################################### fd #########################################
 alias fd="fdfind"
 
-##################################### docker pull ####################################
-function docker_pull_with_retry {
-  while true
-  do
-    command docker pull $1
-    if [[ $? -eq 0 ]];then
-       break
-    fi
-  done
-}
-function docker_pull_mirror {
-  IMAGE_MIRROR="dockerhub.ir/$1"
-  while true
-  do
-    command docker pull $IMAGE_MIRROR
-    if [[ $? -eq 0 ]];then
-       break
-    fi
-  done
-  docker tag $IMAGE_MIRROR $1
-}
-
-# goodbye filtershekan goodbyeeeeeeee
-# function docker(){
-#   if [[ "$1" == "pull" ]];then
-#     shift 1
-#     docker_pull_with_retry $1
-#   elif [[ "$1" == "get" ]];then
-#     shift 1
-#     docker_pull_mirror $1
-#   else
-#     command docker "$@"
-#   fi
-# }
 ##################################### ssh ############################################
 function kill_all_ssh_sessions {
   kill `ps -aux | grep 'ssh ' | grep $(whoami) | awk '{print$2}'` -9
