@@ -404,7 +404,7 @@ import = ["/home/ark/.config/alacritty/colors/base16/base16-gruvbox-dark-medium-
 [terminal]
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
 
 [font]
 size = 18.0

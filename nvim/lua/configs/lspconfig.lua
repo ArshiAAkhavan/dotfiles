@@ -26,6 +26,8 @@ local servers = {
   "jedi_language_server",
   "pyright",
   "ruff",
+  -- cpp 
+  "clangd",
 }
 
 vim.lsp.inlay_hint.enable(true)

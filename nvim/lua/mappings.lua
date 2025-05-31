@@ -11,7 +11,7 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- copy all on ctrl+A
 map({ "n", "i", "v" }, "<C-a>", "<cmd> %y+ <CR>")
 
--- remove mapping of <leader>h 
+-- -- remove mapping of <leader>h 
 vim.keymap.del('n', '<leader>h')
 
 

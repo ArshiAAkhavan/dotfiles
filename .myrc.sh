@@ -1,4 +1,7 @@
 
+####################################### alacritty ###################################
+alias tmux="TERM=alacritty tmux"
+####################################### local bin ###################################
 export PATH=$PATH:$HOME/.local/bin
 ####################################### cargo #######################################
 export PATH=$PATH:$HOME/.cargo/bin
@@ -51,11 +54,7 @@ function ssh(){
   }
 ##################################### fuck ###########################################
 eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
-
-##################################### digicloud ######################################
-alias dgc=digicloud
+# eval $(thefuck --alias FUCK)
 
 ###################################### parser #######################################
 alias yaml='batcat -l yaml'
@@ -64,9 +63,9 @@ alias json='batcat -l json'
 ##################################### autojump #######################################
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 
-autoload -U compinit && compinit -u
+# autoload -U compinit && compinit -u
 # ##################################### zoxide #######################################
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 # source ~/.zoxide.sh
 
 ###################################### editor ########################################
@@ -94,7 +93,7 @@ function hl(){
 # source ~/.sotoon-rc.sh
 
 ###################################### yazi #########################################
-function ya() {
+function y() {
 	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -131,6 +130,21 @@ alias 'v2ray::usa'='(cd /home/ark/Downloads/v2ray && ./v2ray run -c usa.json)'
 alias 'warp'='export HTTP_PROXY=http://127.0.0.1:10809 HTTPS_PROXY=http://127.0.0.1:10809 && warp-terminal'
 
 ###################################### copilot cli ##################################
-. <(gh copilot alias zsh)
+# . <(gh copilot alias zsh)
 
 source ~/.myenv.sh
+
+
+###################################### fzf ##########################################
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###################################### ocaml ########################################
+# opam configuration
+[[ ! -r /home/ark/.opam/opam-init/init.zsh ]] || source /home/ark/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+###################################### nvim  ########################################
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
+
+
