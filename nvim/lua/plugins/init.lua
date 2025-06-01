@@ -8,7 +8,7 @@ return {
   require "plugins.mason",
   require "plugins.nvim-treesitter",
   require "plugins.nvim-tree-sitter-context",
-  require "plugins.nvim-tree-sitter-playground",
+  -- require "plugins.nvim-tree-sitter-playground",
   require "plugins.conform",
   require "plugins.lspconfig",
   require "plugins.telescope",
