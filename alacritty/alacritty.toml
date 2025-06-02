@@ -439,7 +439,7 @@ y = 0
 history = 10000
 
 [terminal.shell]
-args = ["-c", "byobu-tmux attach -t1 || byobu-tmux -l"]
+# args = ["-c", "byobu-tmux attach -t1 || byobu-tmux -l"]
 program = "/bin/zsh"
 
 [window]
