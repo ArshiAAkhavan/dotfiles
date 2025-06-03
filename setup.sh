@@ -16,5 +16,3 @@ function link_dotfiles {
 
 link_dotfiles .config
 link_dotfiles .local/share
-link_dotfiles .themes
-link_dotfiles .icons
