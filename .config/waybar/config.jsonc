@@ -1,0 +1,150 @@
+{
+  // Overall bar settings
+  "layer": "top",          // Position layer of the bar
+  "position": "top",       // Position on the screen
+  "spacing": 0,            // Spacing between modules
+  "height": 34,            // Height of the bar
+
+  // Left-side modules
+  "modules-left": [
+    "custom/logo",         // Custom Arch Linux logo
+    "hyprland/workspaces"  // Workspace indicators for Hyprland
+  ],
+
+  // Center modules
+  "modules-center": [
+    "clock"                // Clock display
+  ],
+
+  // Right-side modules
+  "modules-right": [
+    "tray",                // System tray
+    "memory",              // Memory usage monitor
+    "network",             // Network status
+    "wireplumber",         // Audio/USB device status
+    "battery",             // Battery percentage and icon
+    "custom/power"         // Custom power menu launcher
+  ],
+
+  // Taskbar for Wayland (wlr)
+  "wlr/taskbar": {
+    "format": "{icon}",               // Only show the active window icon
+    "on-click": "activate",           // Activate window on click
+    "on-click-right": "fullscreen",   // Toggle fullscreen on right-click
+    "icon-theme": "WhiteSur",         // Icon theme name
+    "icon-size": 25,                  // Icon size in pixels
+    "tooltip-format": "{title}"       // Tooltip shows window title
+  },
+
+  // Workspace indicators for Hyprland
+  "hyprland/workspaces": {
+    "on-click": "activate",           // Switch to workspace on click
+    "format": "{icon}",               // Show only workspace icon
+    "format-icons": {                 // Icons for different states
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+      "urgent": "󱓻"
+    },
+    "persistent_workspaces": {        // Keep these workspaces always visible
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  // Memory usage monitor
+  "memory": {
+    "interval": 5,          // Update every 5 seconds
+    "format": "󰍛 {}%",     // Icon followed by percentage
+    "max-length": 10        // Max length of displayed string
+  },
+
+  // System tray spacing
+  "tray": {
+    "spacing": 10           // Spacing between tray icons
+  },
+
+  // Clock display
+  "clock": {
+    "tooltip-format": "{calendar}",                // Show full calendar on hover
+    "format-alt": "  {:%a, %d %b %Y}",           // Format for alt display (date)
+    "format": "  {:%I:%M %p}"                    // Format for main display (time)
+  },
+
+  // Network status (Wi-Fi & Ethernet)
+  "network": {
+    "format-wifi": "{icon}",                       // Only show Wi-Fi icon
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],    // Icons for signal strength levels
+    "format-ethernet": "󰀂",                       // Ethernet icon
+    "format-alt": "󱛇",                             // Alternative network icon
+    "format-disconnected": "󰖪",                   // Disconnected icon
+    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",   // Tooltip for Wi-Fi
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}", // Tooltip for Ethernet
+    "tooltip-format-disconnected": "Disconnected",  // Tooltip when offline
+    "on-click": "~/.config/rofi/wifi/wifi.sh &",    // Launch Wi-Fi menu on click
+    "on-click-right": "~/.config/rofi/wifi/wifinew.sh &", // Launch new Wi-Fi script on right-click
+    "interval": 5,         // Refresh every 5 seconds
+    "nospacing": 1         // No extra spacing around module
+  },
+
+  // Audio device & volume control via WirePlumber
+  "wireplumber": {
+    "format": "{icon}",                       // Show only audio icon
+    "format-bluetooth": "󰂰",                 // Bluetooth icon
+    "nospacing": 1,                           // No extra spacing
+    "tooltip-format": "Volume : {volume}%",   // Show volume percentage on hover
+    "format-muted": "󰝟",                     // Muted icon
+    "format-icons": {
+      "headphone": "",                       // Headphone icon
+      "default": ["󰖀","󰕾",""]              // Icons for different default output types
+    },
+    "on-click": "pamixer -t",                 // Toggle mute on click
+    "scroll-step": 1                          // Volume change step on scroll
+  },
+
+  // Custom Arch Linux logo module
+  "custom/logo": {
+    "format": "  ",                          // Text-based Arch logo
+    "tooltip": false,                         // No tooltip
+    "on-click": "~/.config/rofi/launchers/misc/launcher.sh &" // Launch application menu on click
+  },
+
+  // Battery status display
+  "battery": {
+    "format": "{capacity}% {icon}",               // Show percentage and icon
+    "format-icons": {
+      "charging": [                              // Icons for charging animation
+        "󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"
+      ],
+      "default": [                               // Icons for discharging levels
+        "󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"
+      ]
+    },
+    "format-full": "Charged ",                  // Text when fully charged
+    "interval": 5,                                // Refresh every 5 seconds
+    "states": {                                   // Thresholds for warning/critical
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": false                              // No tooltip
+  },
+
+  // Custom power menu launcher
+  "custom/power": {
+    "format": "󰤆",                               // Power icon
+    "tooltip": false,                            // No tooltip
+    "on-click": "(eww close powermenu || eww open powermenu) 2>/dev/null 1>&2 &" // Launch power menu on click
+  }
+}
+
