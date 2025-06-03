@@ -1,0 +1,11 @@
+// oxocarbon
+
+*{
+  bg: #161616;
+  bg-alt: #1f2328;
+  fg: #82cfff;
+  fg-alt: #33b1ff;
+  urgent: #ee5396;
+
+  background-color: @bg;
+}
