@@ -25,10 +25,10 @@ local M = {
         hide_during_completion = true,
         debounce = 75,
         keymap = {
-          accept = "<M-L>",
+          accept = "<leader>l",
           accept_word = false,
-          accept_line = "<M-l>",
-          next = "<M-]>",
+          accept_line = "<leader>l",
+          next = "<leader-]>",
           prev = "<M-[>",
           dismiss = "<C-]>",
         },
