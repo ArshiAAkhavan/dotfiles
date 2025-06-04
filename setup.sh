@@ -14,5 +14,6 @@ function link_dotfiles {
   done
 }
 
+ln -s $PWD/.myrc.sh ~/.myrc.sh
 link_dotfiles .config
 link_dotfiles .local/share
