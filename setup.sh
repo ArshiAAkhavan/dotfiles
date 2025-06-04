@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function link_dotfiles {
+function link_dotdir {
   mkdir -p ~/$1 
   src=$1
   for file in $(/usr/bin/ls $src)
@@ -14,6 +14,18 @@ function link_dotfiles {
   done
 }
 
-ln -s $PWD/.myrc.sh ~/.myrc.sh
-link_dotfiles .config
-link_dotfiles .local/share
+function link_dotfile {
+  src=$1
+  dst=$src
+  echo $dst
+  if [ -e ~/$dst ]; then
+    unlink ~/$dst
+  fi
+  ln -s $PWD/$src ~/$dst 
+}
+
+
+link_dotfile .myrc.sh
+link_dotdir .config
+link_dotdir .local/share
+link_dotdir .themes
