@@ -28,4 +28,4 @@ function link_dotfile {
 link_dotfile .myrc.sh
 link_dotdir .config
 link_dotdir .local/share
-link_dotdir .themes
+# link_dotdir .themes
