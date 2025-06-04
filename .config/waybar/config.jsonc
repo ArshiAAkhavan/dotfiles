@@ -83,7 +83,8 @@
   "clock": {
     "tooltip-format": "{calendar}",                // Show full calendar on hover
     "format-alt": "  {:%a, %d %b %Y}",           // Format for alt display (date)
-    "format": "  {:%I:%M %p}"                    // Format for main display (time)
+    "format": "  {:%I:%M %p}",                    // Format for main display (time)
+    "on-click": "~/.config/eww/scripts/eww-toggle.sh date" // Toggle date display on click
   },
 
   // Network status (Wi-Fi & Ethernet)
