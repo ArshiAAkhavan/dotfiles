@@ -26,6 +26,7 @@ function link_dotfile {
 
 
 link_dotfile .myrc.sh
+link_dotfile .zshrc
 link_dotdir .config
 link_dotdir .local/share
 # link_dotdir .themes
