@@ -1,32 +1,33 @@
 #!/bin/bash
 
-status="$(playerctl -p spotify,vlc status 2>/dev/null)"
-song_title="$(playerctl -p spotify,vlc metadata title 2>/dev/null)"
-song_artist="$(playerctl -p spotify,vlc metadata artist 2>/dev/null)"
+# supported_players="sopotify,vlc,TelegramDesktop"
+supported_players="TelegramDesktop"
+status="$(playerctl -p $supported_players status 2>/dev/null)"
+song_title="$(playerctl -p $supported_players metadata title 2>/dev/null)"
+song_artist="$(playerctl -p $supported_players metadata artist 2>/dev/null)"
 
 if [[ -z $status ]]; then
 	class="no-media"
 fi
 
 getCoverArt() {
+	mkdir -p $eww_cache
+
 	eww_cache="$HOME/.cache/eww"
 	cover_art="$eww_cache/cover.png"
 
-	if [[ ! -d $eww_cache ]]; then
-		mkdir -p $eww_cache
-	fi
+	# spotify_cover_art="$(playerctl -p spotify metadata mpris:artUrl 2>/dev/null)"
+	# vlc_cover_art="$(playerctl -p vlc metadata mpris:artUrl 2>/dev/null)"
 
-	spotify_cover_art="$(playerctl -p spotify metadata mpris:artUrl 2>/dev/null)"
-	vlc_cover_art="$(playerctl -p vlc metadata mpris:artUrl 2>/dev/null)"
+	# if [[ -z $status ]]; then
+	# 	cp ~/.config/eww/assets/no_music.png $cover_art
+	# elif [[ $spotify_cover_art ]]; then
+	# 	curl -s "$spotify_cover_art" >$cover_art
+	# elif [[ $vlc_cover_art ]]; then
+	# 	curl -s "$vlc_cover_art" >$cover_art
+	#  fi
 
-	if [[ -z $status ]]; then
-		cp ~/.config/eww/assets/no_music.png $cover_art
-	elif [[ $spotify_cover_art ]]; then
-		curl -s "$spotify_cover_art" >$cover_art
-	elif [[ $vlc_cover_art ]]; then
-		curl -s "$vlc_cover_art" >$cover_art
-	fi
-
+  playerctl --player=TelegramDesktop metadata --format '{{mpris:artUrl}}' | sed 's@data:image/.*;base64,@@' | base64 -d > $cover_art
 	echo $cover_art
 }
 
@@ -73,13 +74,13 @@ if [[ $1 == "getCoverArt" ]]; then
 fi
 
 if [[ $1 == "play_pause" ]]; then
-	playerctl -p "spotify,vlc" play-pause 2>/dev/null
+	playerctl -p "$supported_players" play-pause 2>/dev/null
 fi
 
 if [[ $1 == "previous" ]]; then
-	playerctl -p "spotify,vlc" previous 2>/dev/null
+	playerctl -p "$supported_players" previous 2>/dev/null
 fi
 
 if [[ $1 == "next" ]]; then
-	playerctl -p "spotify,vlc" next 2>/dev/null
+	playerctl -p "$supported_players" next 2>/dev/null
 fi

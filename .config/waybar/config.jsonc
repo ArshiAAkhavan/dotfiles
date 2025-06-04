@@ -41,6 +41,10 @@
     "on-click": "activate",           // Switch to workspace on click
     "format": "{icon}",               // Show only workspace icon
     "format-icons": {                 // Icons for different states
+
+// 			"urgent": "",
+// 			"active": "",
+// 			"default": "󰧞",
       "default": "",
       "1": "1",
       "2": "2",
