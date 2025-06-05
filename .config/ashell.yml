@@ -64,7 +64,7 @@ updates: # optional, default None
   updateCmd: 'alacritty -e bash -c "paru; echo Done - Press enter to exit; read" &' # required
 # Maximum number of chars that can be present in the window title
 # after that the title will be truncated
-truncateTitleAfterLength: 40 # optional, default 150
+truncateTitleAfterLength: 100 # optional, default 150
 # Workspaces module configuration, optional
 workspaces:
   # The visibility mode of the workspaces, possible values are:
@@ -92,7 +92,7 @@ clock:
   format: "%R <%a %d %b>" # optional, default: %a %d %b %R
 # Media player module configuration
 mediaPlayer:
-  maxTitleLength: 100 # optional, default 100
+  maxTitleLength: 50 # optional, default 100
 # Settings module configuration
 settings:
   # command used for lock the system
