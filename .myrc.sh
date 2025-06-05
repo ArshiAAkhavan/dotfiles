@@ -2,13 +2,17 @@
 # used for pipx
 export PATH=$PATH:$HOME/.local/bin
 ######################################## starship ####################################
-. <(starship init zsh)
+# . <(starship init zsh)
 ######################################## fuck ########################################
 . <(thefuck --alias)
 ######################################## zoxide ######################################
 . <(zoxide init --cmd j zsh)
 ######################################## cargo #######################################
 export PATH=$PATH:$HOME/.cargo/bin
+
+######################################## uv ##########################################
+alias uvs="source `uv venv 2>&1 | grep source | awk '{print$4}'`"
+
 ######################################## exa #########################################
 EXA_WITH_DEFAULT_FLAGS="eza --sort Name --group-directories-first"
 EXA_WITH_DEFAULT_FLAGS_WITH_HEADER="$EXA_WITH_DEFAULT_FLAGS -h"
