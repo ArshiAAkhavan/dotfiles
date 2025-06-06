@@ -1,5 +1,5 @@
 # Dotfiles
-Not to fancy and eye-catching, but sure is hella-ergonomic!
+Not too fancy and eye-catching, but sure is hella-ergonomic!
 
 ## Prerequisites 
 Don't know! just run them until you see a `command <DEPENDANCY> not found` and then install the depancies on your system!
