@@ -141,6 +141,7 @@ appearance:
   # optional, default None
   # without a value the workspaceColors list will be used
   specialWorkspaceColors:
+    - "#CBA6F7"
     - "#a6e3a1"
     - "#f38ba8"
 
