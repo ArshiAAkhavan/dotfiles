@@ -92,7 +92,7 @@ clock:
   format: "%R <%a %d %b>" # optional, default: %a %d %b %R
 # Media player module configuration
 mediaPlayer:
-  maxTitleLength: 50 # optional, default 100
+  maxTitleLength: 40 # optional, default 100
 # Settings module configuration
 settings:
   # command used for lock the system
