@@ -446,7 +446,7 @@ program = "/bin/zsh"
 decorations = "none"
 dynamic_title = true
 # gtk_theme_variant = "None"
-opacity = 0.9
+opacity = 0.6
 startup_mode = "Maximized"
 title = "Alacritty"
 
