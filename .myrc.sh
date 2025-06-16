@@ -11,7 +11,11 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 ######################################## uv ##########################################
-alias uvs="source `uv venv 2>&1 | grep source | awk '{print$4}'`"
+function uvs {
+  venv=$(uv venv --allow-existing  2>&1 | grep source | awk '{print$4}')
+  source $venv
+}
+
 
 ######################################## exa #########################################
 EXA_WITH_DEFAULT_FLAGS="eza --sort Name --group-directories-first"
