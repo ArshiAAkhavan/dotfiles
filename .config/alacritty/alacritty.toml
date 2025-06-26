@@ -1,5 +1,15 @@
 
 [[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "I"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
 action = "IncreaseFontSize"
 key = "Equals"
 mods = "Control"
