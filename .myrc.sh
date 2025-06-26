@@ -11,7 +11,11 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 ######################################## uv ##########################################
-alias uvs="source `uv venv 2>&1 | grep source | awk '{print$4}'`"
+function uvs {
+  venv=$(uv venv --allow-existing  2>&1 | grep source | awk '{print$4}')
+  source $venv
+}
+
 
 ######################################## exa #########################################
 EXA_WITH_DEFAULT_FLAGS="eza --sort Name --group-directories-first"
@@ -86,16 +90,16 @@ function y() {
 	rm -f -- "$tmp"
 }
 # ###################################### streams ####################################
-# alias first="awk '{print"\$"1}'"
-#
+alias first="awk '{print"\$"1}'"
+
 # function skip  {
 #   tee | tail -n +$(($1 + 1))
 # }
 #
-# function take {
-#   tee | awk "{print \$$1}"
-# }
-#
+function take {
+  tee | awk "{print \$$1}"
+}
+
 # function add {
 #  tee | awk '{sum += $1} END {print sum}'
 # }
@@ -115,7 +119,7 @@ function y() {
 # ###################################### copilot cli ##################################
 # # . <(gh copilot alias zsh)
 #
-# source ~/.myenv.sh
+source ~/.myenv.sh
 #
 #
 # ###################################### ocaml ########################################

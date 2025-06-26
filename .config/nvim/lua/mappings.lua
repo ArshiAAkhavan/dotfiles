@@ -11,6 +11,10 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- copy all on ctrl+A
 map({ "n", "i", "v" }, "<C-a>", "<cmd> %y+ <CR>")
 
+map({ "n", "t" }, "<A-I>", function()
+  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
+end, { desc = "terminal toggle floating term" })
+
 -- -- remove mapping of <leader>h 
 vim.keymap.del('n', '<leader>h')
 

@@ -1,5 +1,15 @@
 
 [[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "I"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
 action = "IncreaseFontSize"
 key = "Equals"
 mods = "Control"
@@ -446,7 +456,7 @@ program = "/bin/zsh"
 decorations = "none"
 dynamic_title = true
 # gtk_theme_variant = "None"
-opacity = 0.9
+opacity = 0.6
 startup_mode = "Maximized"
 title = "Alacritty"
 
