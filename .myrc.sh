@@ -90,16 +90,16 @@ function y() {
 	rm -f -- "$tmp"
 }
 # ###################################### streams ####################################
-# alias first="awk '{print"\$"1}'"
-#
+alias first="awk '{print"\$"1}'"
+
 # function skip  {
 #   tee | tail -n +$(($1 + 1))
 # }
 #
-# function take {
-#   tee | awk "{print \$$1}"
-# }
-#
+function take {
+  tee | awk "{print \$$1}"
+}
+
 # function add {
 #  tee | awk '{sum += $1} END {print sum}'
 # }
@@ -119,7 +119,7 @@ function y() {
 # ###################################### copilot cli ##################################
 # # . <(gh copilot alias zsh)
 #
-# source ~/.myenv.sh
+source ~/.myenv.sh
 #
 #
 # ###################################### ocaml ########################################
