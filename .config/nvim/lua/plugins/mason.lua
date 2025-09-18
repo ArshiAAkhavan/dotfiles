@@ -20,7 +20,7 @@ local M = {
       "gopls",
       -- python
       "black",
-      "jedi-language-server",
+      -- "jedi-language-server",
       "pyright",
       "ruff",
       "reorder-python-imports",

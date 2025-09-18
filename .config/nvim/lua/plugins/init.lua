@@ -16,4 +16,5 @@ return {
   require "plugins.cmp",
   require "plugins.avante",
   require "plugins.copilot",
+  require "plugins.copilot-cmp"
 }

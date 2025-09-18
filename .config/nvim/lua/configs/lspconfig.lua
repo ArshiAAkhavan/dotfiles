@@ -23,7 +23,7 @@ local servers = {
   -- go
   "gopls",
   -- python
-  "jedi_language_server",
+  -- "jedi_language_server",
   "pyright",
   "ruff",
   -- cpp 
