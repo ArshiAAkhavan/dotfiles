@@ -16,6 +16,15 @@ function uvs {
   source $venv
 }
 
+function uvi {
+  uv pip install ipython
+  uv run ipython
+}
+
+alias uvp="uv run ipython"
+alias uvpy="uvp"
+alias uvim="uv run vim"
+
 
 ######################################## exa #########################################
 EXA_WITH_DEFAULT_FLAGS="eza --sort Name --group-directories-first"
@@ -38,10 +47,13 @@ alias grep="rg"
 alias cat="bat"
 alias yaml='bat -l yaml'
 alias json='bat -l json'
-# ###################################### fzf ##########################################
+######################################## fzf ##########################################
 . <(fzf --zsh)
-# ######################################### copy #######################################
+######################################## copy #########################################
 alias copy="wl-copy"
+alias paste="wl-paste"
+######################################## QRCode #######################################
+alias qrcode="zbarimg -q --raw"
 # uncomment for xorg:
 # alias copy="xclip -sel clip"
 # ######################################### go #########################################
