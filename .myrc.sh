@@ -56,6 +56,12 @@ alias paste="wl-paste"
 alias qrcode="zbarimg -q --raw"
 # uncomment for xorg:
 # alias copy="xclip -sel clip"
+######################################## name #########################################
+function name {
+  echo "$PWD/$1"
+}
+
+
 # ######################################### go #########################################
 # export GOPATH=$HOME/go
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/go/bin
