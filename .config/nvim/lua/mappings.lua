@@ -14,6 +14,10 @@ map({ "n", "i", "v" }, "<C-a>", "<cmd> %y+ <CR>")
 map({ "n", "t" }, "<A-I>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
+map({"n", "t" }, "<A-Space>", function()
+  require("nvchad.term").toggle { pos = "float", size = 15, id = "floatTerm" }
+
+end, { desc = "terminal toggle horizontal term" })
 
 -- -- remove mapping of <leader>h 
 vim.keymap.del('n', '<leader>h')
