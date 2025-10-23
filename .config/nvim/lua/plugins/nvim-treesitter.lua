@@ -48,7 +48,9 @@ local M = {
     vim.api.nvim_set_hl(
       0,
       "@comment.documentation",
-      { fg = "#d08e6e", bg = "", italic = false, underline = false, sp = "" }
+      -- { fg = "#d08e6e", bg = "", italic = false, underline = false, sp = "" }
+      { fg = "#966F5D", bg = "", italic = false, underline = false, sp = "" }
+      -- { fg = "#6F5950", bg = "", italic = false, underline = false, sp = "" }
     )
 
     opts.playground = {
