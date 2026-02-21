@@ -24,6 +24,7 @@ local M = {
       "csv",
       -- C
       "make",
+      "cmake",
       "c",
       "cpp",
       -- terminal
@@ -41,6 +42,11 @@ local M = {
     vim.api.nvim_set_hl(
       0,
       "@punctuation.bracket",
+      { fg = "#e67e80", bg = "", italic = false, underline = false, sp = "" }
+    )
+    vim.api.nvim_set_hl(
+      0,
+      "@keyword.operator",
       { fg = "#e67e80", bg = "", italic = false, underline = false, sp = "" }
     )
 
