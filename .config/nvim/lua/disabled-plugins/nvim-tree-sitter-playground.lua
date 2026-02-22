@@ -2,7 +2,7 @@ local M = {
   "nvim-treesitter/playground",
   event = "BufEnter",
   config = function()
-    require "nvim-treesitter.configs".setup {
+    require "nvim-treesitter".setup {
       playground = {
         enable = true,
         disable = {},

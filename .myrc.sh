@@ -1,3 +1,5 @@
+######################################## NVIM ########################################
+alias vim='nvim'
 ######################################## PATH ########################################
 # used for pipx
 export PATH=$PATH:$HOME/.local/bin
@@ -146,7 +148,7 @@ source ~/.myenv.sh
 # # opam configuration
 # [[ ! -r /home/ark/.opam/opam-init/init.zsh ]] || source /home/ark/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 #
-# ###################################### nvim  ########################################
+# ###################################### nvm  ########################################
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
