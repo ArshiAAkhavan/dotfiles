@@ -31,3 +31,6 @@ link_dotdir .config
 link_dotdir .local/share
 link_dotdir .themes
 link_dotdir .icons
+
+### fonts
+./set_vazirmatn.sh
