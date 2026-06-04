@@ -56,7 +56,6 @@ local M = {
       },
       copilot_node_command = 'node', -- Node.js version must be > 18.x
       workspace_folders = {},
-      copilot_model = "gpt-41-copilot",        -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
       root_dir = function()
         return vim.fs.dirname(vim.fs.find(".git", { upward = true })[1])
       end,
