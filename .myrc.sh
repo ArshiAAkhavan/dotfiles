@@ -30,7 +30,7 @@ function uvi {
 
 alias uvp="uv run ipython"
 alias uvpy="uvp"
-alias uvim="uv run vim"
+alias uvim="uv run nvim"
 
 
 ######################################## exa #########################################
