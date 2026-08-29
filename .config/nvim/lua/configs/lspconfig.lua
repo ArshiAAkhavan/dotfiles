@@ -23,6 +23,8 @@ local servers = {
   "ruff",
   -- cpp
   "clangd",
+  -- ocaml
+  "ocamllsp",
 }
 
 

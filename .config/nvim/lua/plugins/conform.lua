@@ -1,8 +1,9 @@
 local M = {
   "stevearc/conform.nvim",
-  event = "BufWritePre", -- uncomment for format on save
+  event = "BufWritePre",
+  cmd = "ConformInfo",
   config = function()
-    require "configs.conform"
+    require("conform").setup(require "configs.conform")
   end,
 }
 return M

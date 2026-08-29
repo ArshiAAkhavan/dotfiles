@@ -17,6 +17,8 @@ local M = {
       "go",
       "gomod",
       "gosum",
+      -- ocaml
+      "ocaml",
       -- config languages
       "yaml",
       "json",
