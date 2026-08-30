@@ -14,8 +14,15 @@ alias clique="xdg-open"
 . <(thefuck --alias)
 ######################################## zoxide ######################################
 . <(zoxide init --cmd j zsh)
+
+######################################## jj ##########################################
+. <(COMPLETE=zsh jj)
 ######################################## cargo #######################################
 export PATH=$PATH:$HOME/.cargo/bin
+
+######################################## ocaml #######################################
+[[ ! -r '/home/ark/.opam/opam-init/init.zsh' ]] || source '/home/ark/.opam/opam-init/init.zsh' 2>&1 1> /dev/null
+
 
 ######################################## uv ##########################################
 function uvs {
@@ -154,6 +161,6 @@ source ~/.myenv.sh
 # ###################################### nvm  ########################################
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #
 #
